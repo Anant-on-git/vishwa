@@ -1,0 +1,8 @@
+prefix=/home/abhas/wheels_ws/install
+
+Name: science_tasks
+Description: Description of science_tasks
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
