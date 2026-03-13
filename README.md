@@ -1,41 +1,43 @@
-Vishwa
-Overview
+# Vishwa
 
-Vishwa is a competetion-focused development repository that contains code, experiments, and system components developed under the Vishwa VJTI.
-Embedded systems
+## Overview
+**Vishwa** is a competition-focused robotics development repository created for the **Vishwa VJTI team**.  
+It contains code, experiments, and system components used in the development of our rover for **IRC 2025**.
 
-Remote communication
+The repository focuses on building robust robotics systems combining:
 
-Control algorithms
+- Embedded systems
+- Remote communication
+- Control algorithms
+- Hardware integration
 
-Hardware integration
+It serves as a development platform for robotics experiments, rover systems, and automation tools.
 
-It acts as a development base for robotics experiments, rover systems, and automation tools.
+---
 
-Objectives
+## Objectives
 
-The main goals of this repository are:
+### 1. Robotics Development (IRC 2025 Rover)
+Develop and implement control systems for our rover participating in **International Rover Challenge 2025 (IRC 25')**.
 
-Robotics Development for Our Rover Participating in IRC 25'
+### 2. Embedded Systems Integration
+Interface microcontrollers such as **ESP32 / ESP32-S3** with motors, sensors, and external hardware modules.
 
-Implement control systems for robotic platforms.
+### 3. Remote Communication
+Enable remote control and monitoring of robotic systems using protocols such as:
 
-Embedded Systems Integration
+- SSH
+- Web interfaces
+- Serial communication
 
-Interface microcontrollers such as ESP32 with hardware modules.
+### 4. Experimental Robotics Platform
+Provide a sandbox environment for testing robotics concepts and rapid prototyping.
 
-Remote Communication
+---
 
-Enable remote control or monitoring using protocols like SSH or web interfaces.
+## Repository Structure
 
-Experimental Robotics Platform
-
-Provide a sandbox for testing robotics concepts.
-
-Repository Structure
-
-Typical structure of the project:
-
+```
 vishwa/
 │
 ├── firmware/
@@ -43,201 +45,211 @@ vishwa/
 │   └── microcontroller_code/
 │
 ├── communication/
-│   ├── ssh_control
-│   └── networking
+│   ├── ssh_control/
+│   └── networking/
 │
 ├── control_system/
-│   ├── motor_control
-│   └── navigation
+│   ├── motor_control/
+│   └── navigation/
 │
 ├── hardware/
-│   ├── schematics
-│   └── board_notes
+│   ├── schematics/
+│   └── board_notes/
 │
 ├── docs/
 │   ├── system_design.md
 │   └── hardware_setup.md
 │
 └── README.md
-System Architecture
+```
 
-The robotics system typically consists of the following layers.
+---
 
-1. Hardware Layer
+## System Architecture
+
+The robotics platform is structured into four major layers.
+
+### 1. Hardware Layer
+Physical components used in the rover system.
 
 Includes:
+- Microcontroller (ESP32 / ESP32-S3)
+- Motor drivers
+- Sensors
+- Communication modules
 
-Microcontroller (ESP32 / similar)
+---
 
-Motor drivers
+### 2. Firmware Layer
+Embedded software running on the microcontroller responsible for:
 
-Sensors
+- Motor control
+- Sensor data acquisition
+- Communication protocol handling
 
-Communication modules
+---
 
-2. Firmware Layer
+### 3. Communication Layer
+Handles remote connectivity and command transmission.
 
-Embedded code running on the microcontroller responsible for:
+Supported interfaces may include:
 
-Motor control
+- SSH
+- Web-based control interface
+- Serial communication
 
-Sensor data collection
+---
 
-Communication protocols
+### 4. Control Layer
+Higher-level logic responsible for:
 
-3. Communication Layer
+- Movement control
+- System coordination
+- Command interpretation
+- Navigation logic
 
-Provides remote access and control.
+---
 
-Possible methods include:
+## Hardware Requirements
 
-SSH
+Typical hardware used in the system:
 
-Web interface
-
-Serial communication
-
-4. Control Layer
-
-Higher-level logic for:
-
-Movement control
-
-System coordination
-
-Command interpretation
-
-Hardware Requirements
-
-Typical components used in this project include:
-
-ESP32 / ESP32-S3 microcontroller
-
-Motor drivers
-
-DC motors
-
-Power supply / battery
-
-Communication interface (WiFi / serial)
+- ESP32 / ESP32-S3 microcontroller
+- Motor drivers
+- DC motors
+- Battery / power management system
+- WiFi or serial communication modules
 
 Optional components:
 
-Sensors
+- Sensors (IMU, encoders, cameras)
+- PWM expanders
+- Embedded Linux controller
 
-PWM expanders
+---
 
-Embedded Linux controller
-
-Software Requirements
+## Software Requirements
 
 Development environment may include:
 
-Arduino IDE / PlatformIO
+- **Arduino IDE / PlatformIO**
+- **Python**
+- **ROS2** (for robotics integration)
+- **Git**
 
-Python
+Supported operating systems:
 
-ROS2 (for robotics integration)
+- Linux
+- macOS
+- Windows
 
-Git
+---
 
-Operating systems supported:
-
-Linux
-
-macOS
-
-Windows
-
-Installation
+## Installation
 
 Clone the repository:
 
+```bash
 git clone https://github.com/Anant-on-git/vishwa.git
+```
 
-Navigate into the directory:
+Navigate into the project directory:
 
+```bash
 cd vishwa
+```
 
-Install dependencies if required:
+Install Python dependencies (if required):
 
+```bash
 pip install -r requirements.txt
+```
 
-For microcontroller firmware, open the project using:
+For firmware development, open the firmware directory using:
 
-Arduino IDE
+- Arduino IDE
+- PlatformIO
 
-PlatformIO
+---
 
-Usage
-Running Embedded Firmware
+## Usage
 
-Upload firmware to the microcontroller:
+### Running Embedded Firmware
 
-Select board: ESP32
-Upload firmware
-Running Control System
+Upload the firmware to the microcontroller:
 
-If a Python control interface exists:
+1. Select board: **ESP32 / ESP32-S3**
+2. Compile the firmware
+3. Upload to the device
 
+---
+
+### Running Control System
+
+If a Python control interface is available:
+
+```bash
 python control.py
-Remote Communication
+```
 
-SSH access may be enabled for remote device control.
+---
 
-Example:
+### Remote Communication
 
+Access the device remotely using SSH:
+
+```bash
 ssh user@device_ip
-Example Applications
+```
 
-Possible applications include:
+---
 
-Rover control systems
+## Example Applications
 
-Remote robotics experiments
+This repository can support development of:
 
-IoT based robot monitoring
+- Rover control systems
+- Remote robotics experiments
+- IoT-based robot monitoring
+- Autonomous robotics research
 
-Autonomous robotics research
+---
 
-Future Improvements
+## Future Improvements
 
-Planned improvements for the project:
+Planned enhancements include:
 
-ROS2 integration
+- ROS2 integration
+- Autonomous navigation algorithms
+- Multi-robot coordination
+- Mesh communication systems
+- AI-driven robotics control
 
-Autonomous navigation algorithms
+---
 
-Multi-robot coordination
-
-Mesh communication systems
-
-AI based robotics control
-
-Contribution
+## Contribution
 
 Contributions are welcome.
 
-Steps:
+1. Fork the repository  
+2. Create a feature branch  
 
-Fork the repository
+```bash
+git checkout -b feature-name
+```
 
-Create a new branch
+3. Commit your changes  
+4. Submit a pull request  
 
-Implement your feature
+---
 
-Submit a pull request
+## Author
 
-Author:
-
-Kishor Sumb
+**Kishor Sumb**
 
 Robotics developer focused on:
 
-Embedded systems
-
-AI + robotics
-
-autonomous systems
-
-experimental engineering
+- Embedded systems
+- AI + Robotics
+- Autonomous systems
+- Experimental engineering
